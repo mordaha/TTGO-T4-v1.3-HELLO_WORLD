@@ -89,6 +89,8 @@ void setup()
   tft.drawLine(0, 185, 240, 185, ILI9341_WHITE);
 }
 
+int cnt = 0;
+
 void loop()
 {
   tft.setTextSize(1);
@@ -106,6 +108,16 @@ void loop()
   {
     tft.println("Wifi: not connected");
   }
+
+  tft.fillRect(0, 40, 240, 80, BACKGROUND_COLOR);
+  tft.setTextSize(4);
+  tft.setCursor(10, 50);
+  tft.println(String(cnt));
+
+  cnt += 1;
+
+  if (cnt > 100)
+    cnt = 0;
 
   if (digitalRead(BUTTON_0) == LOW)
   {
