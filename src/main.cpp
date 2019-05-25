@@ -1,6 +1,7 @@
 /*
 The MIT License (MIT)
 */
+#define USE_FAST_PINIO 1
 
 #include <Arduino.h>
 
